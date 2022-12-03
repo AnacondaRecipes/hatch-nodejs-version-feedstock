@@ -27,13 +27,13 @@ requirements:
 test:
   source_files:
     - tests
+  imports:
+    - hatch_nodejs_version  
   requires:
     - m2-grep  # [win]
     - pip
     - pytest >=7.0.1
     - pytest-cov
-  imports:
-    - hatch_nodejs_version
   commands:
     - pip check
     - pip list
@@ -42,9 +42,13 @@ test:
 
 about:
   home: https://github.com/agoose77/hatch-nodejs-version
-  summary: Hatch plugin for versioning from a package.json file
+  dev_url: https://github.com/agoose77/hatch-nodejs-version/tree/master
+  doc_url: https://github.com/agoose77/hatch-nodejs-version/blob/master/README.md
   license: MIT
+  license_family: MIT
   license_file: LICENSE.txt
+  summary: Hatch plugin for versioning from a package.json file
+  description: Hatch plugin to read pyproject.toml metadata from package.json
 
 extra:
   recipe-maintainers:
