@@ -11,18 +11,18 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: True  # [py<37]
 
 requirements:
   host:
     - hatchling
     - pip
-    - python >=3.7
+    - python
   run:
     - hatchling >=0.21.0
-    - python >=3.7
+    - python
 
 test:
   source_files:
