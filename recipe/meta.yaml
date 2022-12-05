@@ -20,6 +20,7 @@ requirements:
     - hatchling
     - pip
     - python
+    - wheel
   run:
     - hatchling >=0.21.0
     - python
@@ -42,7 +43,7 @@ test:
 
 about:
   home: https://github.com/agoose77/hatch-nodejs-version
-  dev_url: https://github.com/agoose77/hatch-nodejs-version/tree/master
+  dev_url: https://github.com/agoose77/hatch-nodejs-version/
   doc_url: https://github.com/agoose77/hatch-nodejs-version/blob/master/README.md
   license: MIT
   license_family: MIT
