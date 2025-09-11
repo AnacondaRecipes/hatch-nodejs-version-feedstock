@@ -54,4 +54,5 @@ extra:
     - bollwyvl
     - agoose77
     - thewchan
-  skip-lints: python_build_tool_in_run
+  skip-lints: 
+    - python_build_tool_in_run
