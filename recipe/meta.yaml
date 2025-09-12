@@ -1,27 +1,27 @@
 {% set name = "hatch-nodejs-version" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hatch_nodejs_version-{{ version }}.tar.gz
-  sha256: 8a7828d817b71e50bbbbb01c9bfc0b329657b7900c56846489b9c958de15b54c
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_')}}-{{ version }}.tar.gz
+  sha256: 2428ea398dd053f019d2b7ac949dd6b690ca8e826b6d433ad13c5b6c475ae91b
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
-  skip: True  # [py<37]
+  skip: True  # [py<39]
 
 requirements:
   host:
-    - hatchling
     - pip
     - python
+    - hatchling
   run:
-    - hatchling >=0.21.0
     - python
+    - hatchling >=0.21.0
 
 test:
   source_files:
@@ -29,7 +29,7 @@ test:
   imports:
     - hatch_nodejs_version  
   requires:
-    - m2-grep  # [win]
+    - msys2-grep  # [win]
     - pip
     - pytest >=7.0.1
     - pytest-cov
@@ -41,7 +41,7 @@ test:
 
 about:
   home: https://github.com/agoose77/hatch-nodejs-version
-  dev_url: https://github.com/agoose77/hatch-nodejs-version/
+  dev_url: https://github.com/agoose77/hatch-nodejs-version
   doc_url: https://github.com/agoose77/hatch-nodejs-version/blob/master/README.md
   license: MIT
   license_family: MIT
@@ -54,3 +54,5 @@ extra:
     - bollwyvl
     - agoose77
     - thewchan
+  skip-lints: 
+    - python_build_tool_in_run
